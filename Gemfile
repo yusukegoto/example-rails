@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-ruby '>= 2.2.2'
-
 gem 'rails', github: "rails/rails"
 
 gem 'sqlite3'
@@ -16,7 +14,7 @@ group :test do
   gem 'capybara'
   gem 'poltergeist'
   gem 'database_cleaner'
-  gem 'percy-capybara'
+  gem 'percy-capybara', '3.1.1'
 end
 
 group :production do
