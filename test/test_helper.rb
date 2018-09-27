@@ -3,6 +3,7 @@ require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 require 'capybara/rails'
 require 'capybara/poltergeist'
+require 'knapsack'
 
 Percy::Capybara.initialize_build
 at_exit { Percy::Capybara.finalize_build }
@@ -41,3 +42,6 @@ end
 ActiveRecord::Base.shared_connection = ActiveRecord::Base.connection
 
 DatabaseCleaner.strategy = :truncation, { pre_count: true, reset_ids: false }
+
+knapsack_adapter = Knapsack::Adapters::MinitestAdapter.bind
+knapsack_adapter.set_test_helper_path(__FILE__)

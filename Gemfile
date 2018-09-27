@@ -11,6 +11,7 @@ gem 'turbolinks', github: 'rails/turbolinks'
 gem 'puma'
 
 group :test do
+  gem 'knapsack'
   gem 'capybara'
   gem 'poltergeist'
   gem 'database_cleaner'
