@@ -3,10 +3,10 @@ require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 require 'capybara/rails'
 require 'capybara/poltergeist'
-require 'knapsack'
-
-knapsack_adapter = Knapsack::Adapters::MinitestAdapter.bind
-knapsack_adapter.set_test_helper_path(__FILE__)
+# require 'knapsack'
+#
+# knapsack_adapter = Knapsack::Adapters::MinitestAdapter.bind
+# knapsack_adapter.set_test_helper_path(__FILE__)
 
 Percy::Capybara.initialize_build
 at_exit { Percy::Capybara.finalize_build }
