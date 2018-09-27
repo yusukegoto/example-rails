@@ -13,6 +13,10 @@ class TodoMvcTest < ActionDispatch::IntegrationTest
     DatabaseCleaner.clean
   end
 
+  TODO_ITEM_ONE = 'buy some cheese ' + rand(100).to_s + ' times'
+  TODO_ITEM_TWO = 'feed the cat ' + rand(100).to_s + ' times'
+  TODO_ITEM_THREE = 'book a doctors appointment'
+
   test "allow me to add todo items" do
     visit "/"
 
@@ -26,15 +30,20 @@ class TodoMvcTest < ActionDispatch::IntegrationTest
     Percy::Capybara.snapshot(page, name: 'Todo list with 2 todos')
   end
 
+  test "allow me to add one todo item" do
+    visit "/"
+
+    enter_item(TODO_ITEM_ONE)
+    assert_items [TODO_ITEM_ONE]
+
+    Percy::Capybara.snapshot(page, name: 'Todo list with 1 todo')
+  end
+
   private
 
   def assert_items(ary)
     assert_equal ary, todo_items.map { |el| el.find(".view label").text }
   end
-
-  TODO_ITEM_ONE = 'buy some cheese'
-  TODO_ITEM_TWO = 'feed the cat'
-  TODO_ITEM_THREE = 'book a doctors appointment'
 
   def todo_items
     sleep(SLEEP_TIME)
