@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class TodoMvcTest < ActionDispatch::IntegrationTest
+class OtherTest < ActionDispatch::IntegrationTest
   # Capybara / PhantomJS freezes if we don't allow it time to complete
   # some actions.  0.05 works for me.  YMMV.
   SLEEP_TIME = 0.05
@@ -17,7 +17,7 @@ class TodoMvcTest < ActionDispatch::IntegrationTest
   TODO_ITEM_TWO = 'feed the cat ' + rand(100).to_s + ' times'
   TODO_ITEM_THREE = 'book a doctors appointment'
 
-  test "allow me to add todo items" do
+  test "other allow me to add todo items" do
     visit "/"
 
     Percy::Capybara.snapshot(page, name: 'Empty todo list')
@@ -30,7 +30,7 @@ class TodoMvcTest < ActionDispatch::IntegrationTest
     Percy::Capybara.snapshot(page, name: 'Todo list with 2 todos')
   end
 
-  test "allow me to add one todo item" do
+  test "other allow me to add one todo item" do
     visit "/"
 
     enter_item(TODO_ITEM_ONE)
@@ -39,7 +39,7 @@ class TodoMvcTest < ActionDispatch::IntegrationTest
     Percy::Capybara.snapshot(page, name: 'Todo list with 1 todo')
   end
 
-  test "allow me to add todo items1" do
+  test "other allow me to add todo items1" do
     visit "/"
 
     Percy::Capybara.snapshot(page, name: 'Empty todo list')
@@ -52,7 +52,7 @@ class TodoMvcTest < ActionDispatch::IntegrationTest
     Percy::Capybara.snapshot(page, name: 'Todo list with 2 todos')
   end
 
-  test "allow me to add one todo item1" do
+  test "other allow me to add one todo item1" do
     visit "/"
 
     enter_item(TODO_ITEM_ONE)
@@ -61,7 +61,7 @@ class TodoMvcTest < ActionDispatch::IntegrationTest
     Percy::Capybara.snapshot(page, name: 'Todo list with 1 todo')
   end
 
-  test "allow me to add todo items2" do
+  test "other allow me to add todo items2" do
     visit "/"
 
     Percy::Capybara.snapshot(page, name: 'Empty todo list')
@@ -74,7 +74,7 @@ class TodoMvcTest < ActionDispatch::IntegrationTest
     Percy::Capybara.snapshot(page, name: 'Todo list with 2 todos')
   end
 
-  test "allow me to add one todo item2" do
+  test "other allow me to add one todo item2" do
     visit "/"
 
     enter_item(TODO_ITEM_ONE)
@@ -83,7 +83,7 @@ class TodoMvcTest < ActionDispatch::IntegrationTest
     Percy::Capybara.snapshot(page, name: 'Todo list with 1 todo')
   end
 
-  test "allow me to add todo items3" do
+  test "other allow me to add todo items3" do
     visit "/"
 
     Percy::Capybara.snapshot(page, name: 'Empty todo list')
@@ -96,7 +96,7 @@ class TodoMvcTest < ActionDispatch::IntegrationTest
     Percy::Capybara.snapshot(page, name: 'Todo list with 2 todos')
   end
 
-  test "allow me to add one todo item3" do
+  test "other allow me to add one todo item3" do
     visit "/"
 
     enter_item(TODO_ITEM_ONE)
